@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Gallery — Kitchen World Inc.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared/site.css">
+<style>
+  .filters{display:flex;gap:10px;flex-wrap:wrap;padding:24px 0 0;margin-bottom:48px}
+  .filter{padding:10px 18px;border:1px solid var(--line);background:var(--white);font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--slate);cursor:pointer;transition:all .2s;border-radius:2px}
+  .filter:hover{border-color:var(--navy);color:var(--navy)}
+  .filter.on{background:var(--navy);color:var(--cream);border-color:var(--navy)}
+  .filter .count{color:var(--gold);margin-left:8px}
+  .filter.on .count{color:var(--gold-soft)}
+  .gal{display:grid;grid-template-columns:repeat(12,1fr);grid-auto-rows:160px;gap:14px}
+  .tile{position:relative;overflow:hidden;background:var(--cream-2);cursor:pointer}
+  .tile img{width:100%;height:100%;object-fit:cover;transition:transform .4s ease}
+  .tile:hover img{transform:scale(1.03)}
+  .tile::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(10,29,48,.78) 100%);opacity:0;transition:opacity .25s;z-index:1}
+  .tile:hover::after{opacity:1}
+  .tile-meta{position:absolute;bottom:18px;left:20px;color:var(--cream);z-index:2;opacity:0;transform:translateY(6px);transition:all .25s}
+  .tile:hover .tile-meta{opacity:1;transform:none}
+  .tile-meta .tag{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.14em;color:var(--gold-soft);text-transform:uppercase}
+  .tile-meta h4{font-size:17px;color:var(--cream);font-weight:500;margin-top:4px}
+  .t-a{grid-column:span 6;grid-row:span 3}
+  .t-b{grid-column:span 6;grid-row:span 2}
+  .t-c{grid-column:span 3;grid-row:span 2}
+  .t-d{grid-column:span 3;grid-row:span 2}
+  .t-e{grid-column:span 4;grid-row:span 2}
+  .t-f{grid-column:span 4;grid-row:span 2}
+  .t-g{grid-column:span 4;grid-row:span 2}
+  .t-h{grid-column:span 5;grid-row:span 2}
+  .t-i{grid-column:span 4;grid-row:span 2}
+  .t-j{grid-column:span 3;grid-row:span 2}
+  .t-k{grid-column:span 6;grid-row:span 2}
+  .t-l{grid-column:span 6;grid-row:span 2}
+  .t-m{grid-column:span 4;grid-row:span 2}
+  .t-n{grid-column:span 4;grid-row:span 2}
+  .t-o{grid-column:span 4;grid-row:span 2}
+  .gal-bar{display:flex;justify-content:space-between;align-items:center;margin-top:64px;padding-top:32px;border-top:1px solid var(--line)}
+  .gal-bar p{color:var(--slate);font-size:14.5px}
+  @media(max-width:960px){.gal{grid-template-columns:1fr;grid-auto-rows:220px}.gal .tile{grid-column:span 1!important;grid-row:span 1!important}}
+</style>
+</head>
+<body data-page="gallery">
+<div id="site-nav"></div>
+
+<header class="ph">
+  <div class="wrap">
+    <div class="crumbs"><a href="index.html">Home</a><span class="sep">/</span><span class="cur">Gallery</span></div>
+    <div class="ph-inner">
+      <div>
+        <span class="eyebrow">Recent work</span>
+        <h1 style="margin-top:20px">Projects from <em>the tri-state.</em></h1>
+        <p class="ph-sub">A living gallery of kitchens, baths, and full-home cabinetry packages we've delivered since 2022. Filter by room, or scroll through — every photo is from a real Kitchen World install.</p>
+        <div class="ph-meta">
+          <span class="dot"></span><span>180+ completed projects</span>
+          <span class="dot"></span><span>Updated monthly</span>
+        </div>
+      </div>
+      <div class="ph-img"><img src="images/g1.jpg" alt="Gallery"></div>
+    </div>
+  </div>
+</header>
+
+<section class="section" style="padding:64px 0 120px">
+  <div class="wrap">
+    <div class="filters" role="tablist">
+      <button class="filter on" data-f="all">All <span class="count">15</span></button>
+      <button class="filter" data-f="kitchen">Kitchens <span class="count">7</span></button>
+      <button class="filter" data-f="bath">Bathrooms <span class="count">5</span></button>
+      <button class="filter" data-f="pantry">Pantries &amp; Built-ins <span class="count">2</span></button>
+      <button class="filter" data-f="detail">Details <span class="count">1</span></button>
+    </div>
+    <div class="gal" id="gal">
+      <a href="#" class="tile t-a" data-c="kitchen"><img src="images/g1.jpg" alt=""><div class="tile-meta"><span class="tag">Kitchen · Philadelphia</span><h4>Rittenhouse Residence</h4></div></a>
+      <a href="#" class="tile t-b" data-c="bath"><img src="images/g2.jpg" alt=""><div class="tile-meta"><span class="tag">Primary Bath · Furlong</span><h4>Buckingham Farmhouse</h4></div></a>
+      <a href="#" class="tile t-c" data-c="kitchen"><img src="images/g3.jpg" alt=""><div class="tile-meta"><span class="tag">Kitchen · Bridgeport</span><h4>Lafayette Hill</h4></div></a>
+      <a href="#" class="tile t-d" data-c="kitchen"><img src="images/g4.jpg" alt=""><div class="tile-meta"><span class="tag">Kitchen · Philadelphia</span><h4>Fairmount Townhome</h4></div></a>
+      <a href="#" class="tile t-e" data-c="bath"><img src="images/g5.jpg" alt=""><div class="tile-meta"><span class="tag">Hall Bath · Furlong</span><h4>Doylestown Colonial</h4></div></a>
+      <a href="#" class="tile t-f" data-c="kitchen"><img src="images/g6.jpg" alt=""><div class="tile-meta"><span class="tag">Kitchen · Bridgeport</span><h4>Gulph Mills Kitchen</h4></div></a>
+      <a href="#" class="tile t-g" data-c="pantry"><img src="images/g7.jpg" alt=""><div class="tile-meta"><span class="tag">Butler's Pantry · Furlong</span><h4>Doylestown Pantry</h4></div></a>
+      <a href="#" class="tile t-h" data-c="kitchen"><img src="images/g8.jpg" alt=""><div class="tile-meta"><span class="tag">Kitchen · Philadelphia</span><h4>Chestnut Hill Renovation</h4></div></a>
+      <a href="#" class="tile t-i" data-c="bath"><img src="images/g9.jpg" alt=""><div class="tile-meta"><span class="tag">Guest Bath · Bridgeport</span><h4>Gulph Mills Retreat</h4></div></a>
+      <a href="#" class="tile t-j" data-c="detail"><img src="images/p4.jpg" alt=""><div class="tile-meta"><span class="tag">Powder · Philadelphia</span><h4>Fitler Powder Detail</h4></div></a>
+      <a href="#" class="tile t-k" data-c="kitchen"><img src="images/k1.jpg" alt=""><div class="tile-meta"><span class="tag">Kitchen · Furlong</span><h4>New Hope Kitchen</h4></div></a>
+      <a href="#" class="tile t-l" data-c="bath"><img src="images/b1.jpg" alt=""><div class="tile-meta"><span class="tag">Primary Bath · Philadelphia</span><h4>Society Hill Suite</h4></div></a>
+      <a href="#" class="tile t-m" data-c="pantry"><img src="images/k4.jpg" alt=""><div class="tile-meta"><span class="tag">Built-ins · Bridgeport</span><h4>Main Line Office</h4></div></a>
+      <a href="#" class="tile t-n" data-c="kitchen"><img src="images/k5.jpg" alt=""><div class="tile-meta"><span class="tag">Kitchen · Philadelphia</span><h4>Queen Village</h4></div></a>
+      <a href="#" class="tile t-o" data-c="bath"><img src="images/b3.jpg" alt=""><div class="tile-meta"><span class="tag">Bath · Furlong</span><h4>Solebury Spa</h4></div></a>
+    </div>
+    <div class="gal-bar">
+      <p>Showing 15 of 180+ completed projects. More uploaded monthly.</p>
+      <a href="contact.html" class="btn btn-ghost">Start Your Project<span class="arrow">→</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="cta-strip">
+  <div class="wrap cta-strip-inner">
+    <div><h2>See something you <em>like?</em></h2><p>Point at a gallery project in your consult and we'll tell you exactly what's in it — cabinet line, door style, countertop slab, hardware, paint.</p></div>
+    <div class="cta-strip-actions"><a href="contact.html" class="btn btn-gold">Book a Consultation<span class="arrow">→</span></a></div>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+<script src="shared/site.js"></script>
+<script>
+  const filterBtns = document.querySelectorAll('.filter');
+  const tiles = document.querySelectorAll('.tile');
+  filterBtns.forEach(b => b.addEventListener('click', () => {
+    filterBtns.forEach(x => x.classList.remove('on'));
+    b.classList.add('on');
+    const f = b.dataset.f;
+    tiles.forEach(t => t.style.display = (f === 'all' || t.dataset.c === f) ? '' : 'none');
+  }));
+</script>
+</body>
+</html>

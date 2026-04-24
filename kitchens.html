@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Kitchens — Kitchen World Inc.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared/site.css">
+<style>
+  .cab-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--line);border-left:1px solid var(--line)}
+  .cab{padding:32px 28px 36px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--white);display:flex;flex-direction:column;gap:10px;min-height:280px}
+  .cab .mono{font-size:10px;color:var(--gold)}
+  .cab h3{font-size:22px;font-weight:500;margin-top:8px}
+  .cab p{color:var(--slate);font-size:14.5px;line-height:1.55;margin-top:4px}
+  .cab .swatches{display:flex;gap:6px;margin-top:auto;padding-top:20px}
+  .sw{width:22px;height:22px;border-radius:50%;border:1px solid rgba(0,0,0,.08)}
+  .proc{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid rgba(250,247,242,.15)}
+  .proc-step{padding:48px 28px 48px 0;border-right:1px solid rgba(250,247,242,.15);padding-left:28px}
+  .proc-step:first-child{padding-left:0}.proc-step:last-child{border-right:none;padding-right:0}
+  .proc-num{font-family:"Instrument Sans";font-size:44px;color:var(--gold-soft);font-weight:500;letter-spacing:-0.03em;line-height:1}
+  .proc-step h3{font-size:20px;color:var(--cream);font-weight:500;margin-top:20px}
+  .proc-step p{color:rgba(250,247,242,.7);font-size:14.5px;line-height:1.6;margin-top:12px}
+  .gallery-row{display:grid;grid-template-columns:2fr 1fr 1fr;gap:16px;margin-top:16px}
+  .gallery-row img{width:100%;aspect-ratio:4/3;object-fit:cover}
+  .gallery-row.alt{grid-template-columns:1fr 1fr 2fr}
+  .specs{background:var(--cream-2);padding:72px 0}
+  .specs-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:56px 80px}
+  .spec h4{font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--gold);letter-spacing:.14em;font-weight:400;margin-bottom:12px}
+  .spec p{font-size:16px;color:var(--navy-ink);line-height:1.6}
+  @media(max-width:960px){.cab-grid,.proc,.specs-grid{grid-template-columns:1fr 1fr}.gallery-row,.gallery-row.alt{grid-template-columns:1fr}.proc-step{border-right:none;border-bottom:1px solid rgba(250,247,242,.15);padding:40px 0}}
+</style>
+</head>
+<body data-page="kitchens">
+<div id="site-nav"></div>
+
+<header class="ph">
+  <div class="wrap">
+    <div class="crumbs"><a href="index.html">Home</a><span class="sep">/</span><span class="cur">Kitchens</span></div>
+    <div class="ph-inner">
+      <div>
+        <span class="eyebrow">Cabinetry program</span>
+        <h1 style="margin-top:20px">Kitchens designed <em>to be cooked in.</em></h1>
+        <p class="ph-sub">40+ cabinet lines, priced wholesale, installed by crews we've worked with for decades. Custom, semi-custom, and in-stock — spec'd drawer-by-drawer around how you actually use the room.</p>
+        <div class="ph-meta">
+          <span class="dot"></span><span>40+ manufacturers represented</span>
+          <span class="dot"></span><span>6–14 week lead times</span>
+        </div>
+        <div style="margin-top:36px;display:flex;gap:12px;flex-wrap:wrap">
+          <a href="contact.html" class="btn btn-primary">Book a Design Appointment<span class="arrow">→</span></a>
+          <a href="gallery.html" class="btn btn-ghost">See Finished Kitchens<span class="arrow">→</span></a>
+        </div>
+      </div>
+      <div class="ph-img"><img src="images/k1.jpg" alt="Kitchen"></div>
+    </div>
+  </div>
+</header>
+
+<section class="section" style="padding:96px 0">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><span class="eyebrow">Cabinet lines</span><h2 style="margin-top:24px">A deep bench of <em>cabinet brands.</em></h2></div>
+      <p>Every line below is represented on our showroom floors. Bring a plan, a Pinterest board, or just a budget — we'll match you to a line with the door styles, finishes, and construction quality that fit.</p>
+    </div>
+    <div class="cab-grid">
+      <article class="cab"><span class="mono">TIER 01 · CUSTOM</span><h3>Wood-Mode &amp; Brookhaven</h3><p>Fully-custom inset and overlay construction. Hand-glazed finishes, specified hardwoods, built-to-millimeter.</p><div class="swatches"><div class="sw" style="background:#2c2622"></div><div class="sw" style="background:#6b4f33"></div><div class="sw" style="background:#c9b896"></div><div class="sw" style="background:#efe9e0"></div></div></article>
+      <article class="cab"><span class="mono">TIER 02 · SEMI-CUSTOM</span><h3>Waypoint Living Spaces</h3><p>Frameless and face-frame in dozens of door profiles. The most-spec'd line in our Furlong showroom.</p><div class="swatches"><div class="sw" style="background:#e8ddc8"></div><div class="sw" style="background:#7a8a7c"></div><div class="sw" style="background:#2d3238"></div><div class="sw" style="background:#b6a082"></div></div></article>
+      <article class="cab"><span class="mono">TIER 02 · SEMI-CUSTOM</span><h3>Shiloh Cabinetry</h3><p>Inset framed cabinetry built in Indiana. Known for deep drawer boxes and dovetail joinery.</p><div class="swatches"><div class="sw" style="background:#f5efe4"></div><div class="sw" style="background:#1f2a3a"></div><div class="sw" style="background:#8f6f4a"></div><div class="sw" style="background:#3f4a3d"></div></div></article>
+      <article class="cab"><span class="mono">TIER 03 · STOCK</span><h3>Fabuwood</h3><p>In-stock painted and stained lines with short lead times. Ideal for rentals, spec homes, and tight schedules.</p><div class="swatches"><div class="sw" style="background:#fafafa"></div><div class="sw" style="background:#d9c7a7"></div><div class="sw" style="background:#43484d"></div><div class="sw" style="background:#6f5740"></div></div></article>
+      <article class="cab"><span class="mono">TIER 03 · STOCK</span><h3>Forevermark</h3><p>Value-tier solid wood construction certified by KCMA. Deep in stock across Philadelphia.</p><div class="swatches"><div class="sw" style="background:#eee6d4"></div><div class="sw" style="background:#3d2e22"></div><div class="sw" style="background:#c8b494"></div><div class="sw" style="background:#8b5a3c"></div></div></article>
+      <article class="cab"><span class="mono">TIER 01 · CUSTOM</span><h3>Plain &amp; Fancy</h3><p>Full-custom Lancaster County cabinetry. Integrated appliance garages, touch-latch drawers, furniture-grade finishes.</p><div class="swatches"><div class="sw" style="background:#1a1612"></div><div class="sw" style="background:#7a6449"></div><div class="sw" style="background:#c4bba8"></div><div class="sw" style="background:#4b5d4f"></div></div></article>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--navy);color:var(--cream);padding:120px 0">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><span class="eyebrow" style="color:var(--gold-soft)">How we work</span><h2 style="margin-top:24px;color:var(--cream)">From consult to <em style="color:var(--gold-soft)">coffee on the new island.</em></h2></div>
+      <p style="color:rgba(250,247,242,.7)">Four phases, one point of contact, no handoffs. Expect 10–18 weeks from first appointment to install, depending on cabinet line.</p>
+    </div>
+    <div class="proc">
+      <div class="proc-step"><span class="proc-num">01</span><h3>Consult &amp; measure</h3><p>A designer meets you in the showroom or at home. We measure, photograph, and note every obstacle — vents, plumbing, electrical, structural.</p></div>
+      <div class="proc-step"><span class="proc-num">02</span><h3>Design &amp; specify</h3><p>2D plans, elevations, and a full 3D walkthrough. We finalize door style, finish, hardware, and trim before a dollar is committed.</p></div>
+      <div class="proc-step"><span class="proc-num">03</span><h3>Quote &amp; order</h3><p>Line-by-line itemized pricing. Once you approve, we release the cabinet order and lock the install window with our crew.</p></div>
+      <div class="proc-step"><span class="proc-num">04</span><h3>Deliver &amp; install</h3><p>Cabinets stage at our yard, get inspected, and ship to site. Our installers set, scribe, and punch-list within 3–5 days for a typical kitchen.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><span class="eyebrow">Recent kitchens</span><h2 style="margin-top:24px">A few from <em>this year.</em></h2></div>
+      <p>Six kitchens delivered across Philadelphia, Bucks, and Montgomery counties in 2025–2026.</p>
+    </div>
+    <div class="gallery-row"><img src="images/k2.jpg" alt="Kitchen"><img src="images/k3.jpg" alt="Kitchen"><img src="images/k4.jpg" alt="Kitchen"></div>
+    <div class="gallery-row alt"><img src="images/k5.jpg" alt="Kitchen"><img src="images/k6.jpg" alt="Kitchen"><img src="images/p1.jpg" alt="Kitchen"></div>
+    <div style="margin-top:56px;display:flex;justify-content:flex-end"><a href="gallery.html" class="btn btn-ghost">See All Kitchens<span class="arrow">→</span></a></div>
+  </div>
+</section>
+
+<section class="specs">
+  <div class="wrap">
+    <div class="sec-head" style="margin-bottom:48px">
+      <div><span class="eyebrow">What's included</span><h2 style="margin-top:24px">Every kitchen ships with <em>the details.</em></h2></div>
+      <p>The line items that show up on every one of our kitchen proposals — no upsell, no à la carte.</p>
+    </div>
+    <div class="specs-grid">
+      <div class="spec"><h4>DOVETAIL DRAWERS</h4><p>Solid-wood dovetail drawer boxes with soft-close undermount slides on every spec'd cabinet.</p></div>
+      <div class="spec"><h4>PLYWOOD CONSTRUCTION</h4><p>Full 3/4" plywood boxes and backs standard across every mid- and upper-tier line we represent.</p></div>
+      <div class="spec"><h4>SOFT-CLOSE HINGES</h4><p>Concealed 6-way adjustable soft-close hinges on every door. No optional upgrade line.</p></div>
+      <div class="spec"><h4>ADJUSTABLE LEVELERS</h4><p>Built-in leg levelers on base cabinets — because Philadelphia floors are never square.</p></div>
+      <div class="spec"><h4>FIELD SCRIBING</h4><p>Filler strips are scribed to walls on site by our installers. No caulk gaps, no visible seams.</p></div>
+      <div class="spec"><h4>LIFETIME HARDWARE</h4><p>Blum, Grass, and Salice hinges and slides — all backed by lifetime manufacturer warranties.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-strip">
+  <div class="wrap cta-strip-inner">
+    <div><h2>Ready to start <em>measuring?</em></h2><p>Bring your plans, photos, or just a rough budget. Our designers will walk you through the showroom and rough-price a kitchen by the end of the appointment.</p></div>
+    <div class="cta-strip-actions"><a href="contact.html" class="btn btn-gold">Schedule a Consultation<span class="arrow">→</span></a></div>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+<script src="shared/site.js"></script>
+</body>
+</html>

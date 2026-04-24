@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Design Services — Kitchen World Inc.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared/site.css">
+<style>
+  .deliver{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--line);border-left:1px solid var(--line);background:var(--white)}
+  .del{padding:40px 28px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);display:flex;flex-direction:column;min-height:280px}
+  .del .n{font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--gold);letter-spacing:.14em}
+  .del h3{font-size:21px;font-weight:500;margin-top:18px;color:var(--navy)}
+  .del p{font-size:14.5px;color:var(--slate);line-height:1.55;margin-top:12px}
+  .phase{display:grid;grid-template-columns:1fr 2fr;gap:60px;padding:48px 0;border-bottom:1px solid rgba(250,247,242,.15)}
+  .phase:last-child{border-bottom:none}
+  .phase-num{font-family:"Instrument Sans";font-size:80px;font-weight:400;color:var(--gold-soft);letter-spacing:-0.04em;line-height:1}
+  .phase-num sup{font-family:"JetBrains Mono",monospace;font-size:11px;color:rgba(250,247,242,.5);letter-spacing:.14em;vertical-align:super;margin-left:8px}
+  .phase-body h3{font-size:28px;color:var(--cream);font-weight:500;letter-spacing:-0.02em}
+  .phase-body p{color:rgba(250,247,242,.72);font-size:15.5px;line-height:1.65;margin-top:14px;max-width:620px}
+  .phase-meta{margin-top:20px;display:flex;gap:28px;color:rgba(250,247,242,.55);font-size:13px;font-family:"JetBrains Mono",monospace;letter-spacing:.08em}
+  .designers{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .des{background:var(--white);border:1px solid var(--line);display:flex;flex-direction:column}
+  .des-img{aspect-ratio:4/5;overflow:hidden;background:var(--cream-2);display:grid;place-items:center;position:relative;background-image:repeating-linear-gradient(45deg,transparent 0,transparent 14px,rgba(15,42,68,.045) 14px,rgba(15,42,68,.045) 15px)}
+  .des-img::after{content:"PORTRAIT";position:absolute;bottom:16px;left:16px;background:var(--navy);color:var(--cream);padding:6px 10px;font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.12em}
+  .des-body{padding:28px}
+  .des-body b{font-size:20px;color:var(--navy);display:block;font-weight:500;font-family:"Instrument Sans"}
+  .des-body span.role{font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--gold);letter-spacing:.12em;text-transform:uppercase;margin-top:6px;display:block}
+  .des-body p{font-size:14px;color:var(--slate);line-height:1.55;margin-top:16px}
+  @media(max-width:960px){.deliver,.designers{grid-template-columns:1fr 1fr}.phase{grid-template-columns:1fr;gap:20px}.phase-num{font-size:60px}}
+</style>
+</head>
+<body data-page="design">
+<div id="site-nav"></div>
+
+<header class="ph">
+  <div class="wrap">
+    <div class="crumbs"><a href="index.html">Home</a><span class="sep">/</span><span class="cur">Design Services</span></div>
+    <div class="ph-inner">
+      <div>
+        <span class="eyebrow">In-house design studio</span>
+        <h1 style="margin-top:20px">Real designers. <em>Real drawings.</em></h1>
+        <p class="ph-sub">Seven staff designers with a combined 100+ years of kitchen &amp; bath experience. We plan in 3D, source materials, and hand off trade-ready drawings — whether you're working with our installers or your own GC.</p>
+        <div class="ph-meta">
+          <span class="dot"></span><span>NKBA-certified designers</span>
+          <span class="dot"></span><span>Full 2D + 3D + elevation set</span>
+        </div>
+        <div style="margin-top:36px;display:flex;gap:12px;flex-wrap:wrap">
+          <a href="contact.html" class="btn btn-primary">Book a Designer<span class="arrow">→</span></a>
+          <a href="gallery.html" class="btn btn-ghost">See Their Work<span class="arrow">→</span></a>
+        </div>
+      </div>
+      <div class="ph-img"><img src="images/d1.jpg" alt="Design studio"></div>
+    </div>
+  </div>
+</header>
+
+<section class="section" style="padding:96px 0">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><span class="eyebrow">What you get</span><h2 style="margin-top:24px">A design package <em>your contractor can build from.</em></h2></div>
+      <p>We don't do marketing renderings — we do shop drawings. Every design package ships with the documents below.</p>
+    </div>
+    <div class="deliver">
+      <div class="del"><span class="n">01 · PLAN</span><h3>2D floor plan</h3><p>Dimensioned plan showing cabinet runs, wall types, plumbing rough-ins, and appliance placement to 1/4 scale.</p></div>
+      <div class="del"><span class="n">02 · ELEVATIONS</span><h3>Elevations</h3><p>Every wall run drawn flat, with door styles, trim, lighting, and outlet locations called out.</p></div>
+      <div class="del"><span class="n">03 · 3D WALK</span><h3>3D walkthrough</h3><p>Real-time 3D model we scrub through with you in the showroom. Save multiple versions, compare.</p></div>
+      <div class="del"><span class="n">04 · SPEC SHEET</span><h3>Itemized spec</h3><p>Cabinet-by-cabinet spec — line, door style, finish, hardware, modifications — with SKU-level pricing.</p></div>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--navy);color:var(--cream);padding:96px 0">
+  <div class="wrap">
+    <div class="sec-head" style="margin-bottom:48px">
+      <div><span class="eyebrow" style="color:var(--gold-soft)">Our design process</span><h2 style="margin-top:24px;color:var(--cream)">A five-phase <em style="color:var(--gold-soft)">engagement.</em></h2></div>
+      <p style="color:rgba(250,247,242,.7)">From the first showroom walk-through to post-install punch list. Typical kitchen project spans 10–18 weeks end to end.</p>
+    </div>
+    <div class="phase"><div class="phase-num">01<sup>WK 1</sup></div><div class="phase-body"><h3>Discovery &amp; showroom visit</h3><p>Free 60-minute showroom appointment. We talk budget, scope, timeline, and who's doing the work. You walk the floor; we flag cabinet lines worth considering.</p><div class="phase-meta"><span>FREE · 60 MIN</span><span>PHILADELPHIA · FURLONG · BRIDGEPORT</span></div></div></div>
+    <div class="phase"><div class="phase-num">02<sup>WK 2</sup></div><div class="phase-body"><h3>On-site measure</h3><p>A designer and estimator visit your home. Field measurements, photos, plumbing/electrical notes, structural check. 90 minutes typical.</p><div class="phase-meta"><span>FREE · 90 MIN</span><span>INCLUDES WRITTEN NOTES</span></div></div></div>
+    <div class="phase"><div class="phase-num">03<sup>WK 3–4</sup></div><div class="phase-body"><h3>Design presentation</h3><p>Back in the showroom: 2D plan, elevations, and live 3D walkthrough. We make changes in real time. Plan on 2–3 rounds before final.</p><div class="phase-meta"><span>$500 RETAINER · APPLIED TO ORDER</span></div></div></div>
+    <div class="phase"><div class="phase-num">04<sup>WK 5</sup></div><div class="phase-body"><h3>Final spec &amp; order</h3><p>Signed drawing set, itemized spec sheet, payment schedule. Cabinets go into production; countertop slab gets reserved at the yard.</p><div class="phase-meta"><span>50% DEPOSIT · LEAD TIME BEGINS</span></div></div></div>
+    <div class="phase"><div class="phase-num">05<sup>WK 12+</sup></div><div class="phase-body"><h3>Delivery &amp; install</h3><p>Cabinets stage at our yard, get inspected, ship to site. Installers set and scribe over 3–5 days. Countertop templated after install; final surfaces follow in 2 weeks.</p><div class="phase-meta"><span>INSTALL + COUNTERTOP + PUNCH LIST</span></div></div></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><span class="eyebrow">Meet the team</span><h2 style="margin-top:24px">Seven designers, <em>100+ years combined.</em></h2></div>
+      <p>Every project is led by a single designer from first measure to final punch list. Here are three you're likely to meet.</p>
+    </div>
+    <div class="designers">
+      <div class="des"><div class="des-img"></div><div class="des-body"><b>Linda Amato</b><span class="role">Senior Designer · Philadelphia</span><p>32 years of kitchen design. Specializes in row-home remodels, small footprints, and creative cabinet tricks for Philly's older housing stock.</p></div></div>
+      <div class="des"><div class="des-img"></div><div class="des-body"><b>Burton Reeves</b><span class="role">Principal Designer · Furlong</span><p>Led the Furlong showroom since 2001. Known for high-end farmhouse kitchens, inset cabinetry, and custom pantry millwork.</p></div></div>
+      <div class="des"><div class="des-img"></div><div class="des-body"><b>Mo Ingraham</b><span class="role">Design Director · Bridgeport</span><p>Oversees the Bridgeport studio and our trade program. Deep expertise in kitchens that are also offices, laundry rooms, and playrooms.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-strip">
+  <div class="wrap cta-strip-inner">
+    <div><h2>First consult <em>is on us.</em></h2><p>60 minutes, no obligation, no pushy sales pitch. Bring your plans and budget; we'll tell you what's realistic.</p></div>
+    <div class="cta-strip-actions"><a href="contact.html" class="btn btn-gold">Book a Designer<span class="arrow">→</span></a></div>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+<script src="shared/site.js"></script>
+</body>
+</html>

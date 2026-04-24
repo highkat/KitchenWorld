@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Contact — Kitchen World Inc.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared/site.css">
+<style>
+  .contact-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:80px;align-items:start}
+  .form-card{background:var(--white);border:1px solid var(--line);padding:48px 44px}
+  .form-card h2{font-size:30px;font-weight:500;letter-spacing:-0.02em}
+  .form-card p.lede{color:var(--slate);font-size:14.5px;margin-top:10px;line-height:1.55}
+  .field{margin-top:24px;display:flex;flex-direction:column}
+  .field label{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--slate);margin-bottom:8px}
+  .field input,.field select,.field textarea{background:var(--cream);border:1px solid var(--line);padding:14px 16px;font-family:inherit;font-size:15px;color:var(--navy-ink);border-radius:2px;outline:none;transition:border-color .15s}
+  .field input:focus,.field select:focus,.field textarea:focus{border-color:var(--navy)}
+  .field textarea{resize:vertical;min-height:120px}
+  .field-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .choices{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px}
+  .chip{padding:12px 14px;border:1px solid var(--line);background:var(--cream);font-size:13px;font-family:inherit;cursor:pointer;color:var(--navy);text-align:left;border-radius:2px;transition:all .15s}
+  .chip:hover{border-color:var(--navy)}
+  .chip.on{background:var(--navy);color:var(--cream);border-color:var(--navy)}
+  .form-actions{margin-top:32px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+  .form-actions small{color:var(--slate);font-size:12.5px;line-height:1.5}
+  .info-block{display:flex;flex-direction:column;gap:40px}
+  .info-card{background:var(--navy);color:var(--cream);padding:48px 44px}
+  .info-card .eyebrow{color:var(--gold-soft)}
+  .info-card .eyebrow::before{background:var(--gold-soft)}
+  .info-card h3{color:var(--cream);font-size:28px;font-weight:500;margin-top:16px;letter-spacing:-0.02em}
+  .info-card .big-phone{font-family:"Instrument Sans";font-size:36px;color:var(--cream);display:block;margin-top:20px;letter-spacing:-0.02em;font-weight:500}
+  .info-card .big-phone:hover{color:var(--gold-soft)}
+  .info-card hr{border:none;border-top:1px solid rgba(250,247,242,.15);margin:28px 0}
+  .info-card .hours b{color:var(--gold-soft);font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:400;display:block;margin-bottom:10px}
+  .info-card .hours p{color:rgba(250,247,242,.85);line-height:1.75;font-size:14.5px}
+  .locs{background:var(--white);border:1px solid var(--line)}
+  .loc-row{padding:28px 32px;border-bottom:1px solid var(--line);display:grid;grid-template-columns:1fr 1.5fr;gap:24px;align-items:start}
+  .loc-row:last-child{border-bottom:none}
+  .loc-row .nm{font-family:"Instrument Sans";font-size:20px;font-weight:500;color:var(--navy)}
+  .loc-row .nm span{display:block;font-family:"JetBrains Mono",monospace;font-size:10px;color:var(--gold);letter-spacing:.14em;text-transform:uppercase;margin-top:6px;font-weight:400}
+  .loc-row p{color:var(--slate);font-size:14.5px;line-height:1.6}
+  .loc-row p a{color:var(--navy);border-bottom:1px solid var(--line)}
+  .loc-row p a:hover{color:var(--gold);border-color:var(--gold)}
+  .faq{background:var(--cream-2);padding:96px 0}
+  .faq-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:48px 64px}
+  .qa h4{font-size:18px;font-weight:500;color:var(--navy);margin-bottom:10px}
+  .qa p{color:var(--slate);font-size:15px;line-height:1.6}
+  @media(max-width:960px){.contact-grid,.field-row,.choices,.faq-grid{grid-template-columns:1fr}.loc-row{grid-template-columns:1fr;gap:8px}.info-card .big-phone{font-size:28px}}
+</style>
+</head>
+<body data-page="contact">
+<div id="site-nav"></div>
+
+<header class="ph">
+  <div class="wrap">
+    <div class="crumbs"><a href="index.html">Home</a><span class="sep">/</span><span class="cur">Contact</span></div>
+    <div class="ph-inner">
+      <div>
+        <span class="eyebrow">Book a consultation</span>
+        <h1 style="margin-top:20px">Let's plan <em>your project.</em></h1>
+        <p class="ph-sub">60-minute showroom consultations are free, no pressure, no sales pitch. Bring plans, photos, or just a rough budget — we'll help you figure out what's possible.</p>
+        <div class="ph-meta">
+          <span class="dot"></span><span>Response within 1 business day</span>
+          <span class="dot"></span><span>Free in-home site visits</span>
+        </div>
+      </div>
+      <div class="ph-img"><img src="images/d2.jpg" alt="Consultation"></div>
+    </div>
+  </div>
+</header>
+
+<section class="section" style="padding:96px 0">
+  <div class="wrap">
+    <div class="contact-grid">
+      <form class="form-card" onsubmit="event.preventDefault();this.querySelector('button[type=submit]').textContent='Submitted — we\'ll be in touch'">
+        <span class="eyebrow">Request form</span>
+        <h2 style="margin-top:12px">Tell us about your project.</h2>
+        <p class="lede">We'll match you to a designer and a showroom based on what you're building and where you live.</p>
+        <div class="field-row">
+          <div class="field"><label>First name</label><input type="text" placeholder="Jane" required/></div>
+          <div class="field"><label>Last name</label><input type="text" placeholder="Doe" required/></div>
+        </div>
+        <div class="field-row">
+          <div class="field"><label>Email</label><input type="email" placeholder="jane@email.com" required/></div>
+          <div class="field"><label>Phone</label><input type="tel" placeholder="(215) 555-0100"/></div>
+        </div>
+        <div class="field"><label>Zip code</label><input type="text" placeholder="19103" style="max-width:200px"/></div>
+        <div class="field">
+          <label>Project type</label>
+          <div class="choices" data-group="type">
+            <button type="button" class="chip on">Kitchen</button>
+            <button type="button" class="chip">Bathroom</button>
+            <button type="button" class="chip">Countertops only</button>
+            <button type="button" class="chip">Multi-room / whole house</button>
+          </div>
+        </div>
+        <div class="field">
+          <label>Preferred showroom</label>
+          <div class="choices" data-group="showroom">
+            <button type="button" class="chip on">Philadelphia</button>
+            <button type="button" class="chip">Furlong</button>
+            <button type="button" class="chip">Bridgeport</button>
+            <button type="button" class="chip">No preference</button>
+          </div>
+        </div>
+        <div class="field">
+          <label>Estimated budget</label>
+          <select>
+            <option>Under $15k</option>
+            <option selected>$15k – $40k</option>
+            <option>$40k – $80k</option>
+            <option>$80k – $150k</option>
+            <option>$150k +</option>
+            <option>Not sure yet</option>
+          </select>
+        </div>
+        <div class="field"><label>Tell us about the project</label><textarea placeholder="A few sentences about scope, timeline, and anything you've already picked out."></textarea></div>
+        <div class="form-actions">
+          <small>By submitting, you agree to be contacted by Kitchen World. We never share your information.</small>
+          <button type="submit" class="btn btn-primary">Send Request<span class="arrow">→</span></button>
+        </div>
+      </form>
+      <div class="info-block">
+        <div class="info-card">
+          <span class="eyebrow">Call directly</span>
+          <h3>Any of our three showrooms.</h3>
+          <a href="tel:+12157446447" class="big-phone">215.744.6447</a>
+          <hr/>
+          <div class="hours">
+            <b>Hours</b>
+            <p>Monday – Friday &nbsp; 9:00 AM – 5:00 PM<br/>Saturday &nbsp; Appointments only<br/>Sunday &nbsp; Closed</p>
+          </div>
+        </div>
+        <div class="locs">
+          <div class="loc-row"><div class="nm">Philadelphia<span>Orthodox St. · HQ</span></div><p>2763 Orthodox St.<br/>Philadelphia, PA 19137<br/><a href="tel:+12157446447">215.744.6447</a></p></div>
+          <div class="loc-row"><div class="nm">Furlong<span>York Rd. · Bucks County</span></div><p>3503 York Rd.<br/>Furlong, PA 18925<br/><a href="tel:+12157446447">215.744.6447</a></p></div>
+          <div class="loc-row"><div class="nm">Bridgeport<span>East 4th St. · Montgomery</span></div><p>65 East 4th St.<br/>Bridgeport, PA 19405<br/><a href="tel:+12157446447">215.744.6447</a></p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="faq">
+  <div class="wrap">
+    <div class="sec-head" style="margin-bottom:56px">
+      <div><span class="eyebrow">Common questions</span><h2 style="margin-top:24px">Before you <em>reach out.</em></h2></div>
+      <p>The questions we hear most often from first-time clients.</p>
+    </div>
+    <div class="faq-grid">
+      <div class="qa"><h4>Is the first consultation really free?</h4><p>Yes. A 60-minute showroom appointment costs nothing. We only charge a design retainer ($500) if you ask us to produce a full drawing set — and it's applied to your cabinet order.</p></div>
+      <div class="qa"><h4>Do I need to bring plans?</h4><p>Helpful but not required. Plans, photos, rough sketches, or even just a few Pinterest boards all work. We can measure on a follow-up site visit.</p></div>
+      <div class="qa"><h4>How long does a kitchen take?</h4><p>10–18 weeks from first consult to install, depending on cabinet line. Stock lines run fast; custom lines add 4–6 weeks of lead time.</p></div>
+      <div class="qa"><h4>Do you work with contractors?</h4><p>Constantly. We have a full trade program — designer discounts, net-30 terms, shop drawings GCs can actually build from.</p></div>
+      <div class="qa"><h4>Do you install, or just sell cabinets?</h4><p>Both. We have an in-house install crew for customers who want it turnkey, and we'll happily spec cabinets for you to hand to your own GC.</p></div>
+      <div class="qa"><h4>What brands do you represent?</h4><p>40+ cabinet lines across custom, semi-custom, and stock tiers — plus quartz, granite, and laminate from every major surface manufacturer.</p></div>
+    </div>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+<script src="shared/site.js"></script>
+<script>
+  document.querySelectorAll('.choices').forEach(g => {
+    g.querySelectorAll('.chip').forEach(c => c.addEventListener('click', () => {
+      g.querySelectorAll('.chip').forEach(x => x.classList.remove('on'));
+      c.classList.add('on');
+    }));
+  });
+</script>
+</body>
+</html>

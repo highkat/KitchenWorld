@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Countertops — Kitchen World Inc.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared/site.css">
+<style>
+  .mat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--line)}
+  .mat{padding:0;border-right:1px solid var(--line);background:var(--white);display:flex;flex-direction:column;min-height:520px}
+  .mat:last-child{border-right:none}
+  .mat-top{position:relative;aspect-ratio:4/3;overflow:hidden;border-bottom:1px solid var(--line)}
+  .mat-top img{width:100%;height:100%;object-fit:cover}
+  .mat-tag{position:absolute;top:16px;left:16px;background:var(--cream);padding:6px 10px;font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--navy)}
+  .mat-body{padding:32px 32px 36px;display:flex;flex-direction:column;flex:1}
+  .mat-body h3{font-size:26px;font-weight:500}
+  .mat-body .lede{color:var(--slate);font-size:15px;line-height:1.55;margin-top:12px}
+  .mat-stats{margin-top:auto;padding-top:24px;border-top:1px solid var(--line);display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .mat-stats .s .k{font-family:"JetBrains Mono",monospace;font-size:10px;color:var(--slate);letter-spacing:.12em;text-transform:uppercase}
+  .mat-stats .s .v{font-size:14px;color:var(--navy);margin-top:4px;font-weight:500}
+  .compare{margin-top:80px;border:1px solid var(--line);background:var(--white);overflow:hidden}
+  .compare table{width:100%;border-collapse:collapse;font-size:14.5px}
+  .compare th,.compare td{text-align:left;padding:20px 28px;border-bottom:1px solid var(--line)}
+  .compare th{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--slate);font-weight:400;background:var(--cream-2)}
+  .compare td:first-child{font-weight:500;color:var(--navy)}
+  .compare tr:last-child td{border-bottom:none}
+  .dots{display:flex;gap:4px}
+  .dots .d{width:8px;height:8px;border-radius:50%;background:var(--line)}
+  .dots .d.on{background:var(--gold)}
+  .steps{display:grid;grid-template-columns:repeat(5,1fr);gap:0;border-top:1px solid var(--line)}
+  .step{padding:40px 28px 40px 0;padding-left:28px;border-right:1px solid var(--line);position:relative}
+  .step:first-child{padding-left:0}.step:last-child{border-right:none;padding-right:0}
+  .step .n{font-family:"JetBrains Mono",monospace;font-size:10px;color:var(--gold);letter-spacing:.14em}
+  .step h4{font-size:17px;font-weight:500;margin-top:14px;color:var(--navy)}
+  .step p{font-size:13.5px;color:var(--slate);line-height:1.55;margin-top:8px}
+  @media(max-width:960px){.mat-grid,.steps{grid-template-columns:1fr}.mat,.step{border-right:none;border-bottom:1px solid var(--line)}.compare{overflow-x:auto}}
+</style>
+</head>
+<body data-page="countertops">
+<div id="site-nav"></div>
+
+<header class="ph">
+  <div class="wrap">
+    <div class="crumbs"><a href="index.html">Home</a><span class="sep">/</span><span class="cur">Countertops</span></div>
+    <div class="ph-inner">
+      <div>
+        <span class="eyebrow">Surfaces program</span>
+        <h1 style="margin-top:20px">Countertops — <em>templated, fabricated, installed.</em></h1>
+        <p class="ph-sub">Quartz, granite, and laminate. Digital-templated on site, fabricated to spec in our shop, and installed by the crew that measured it. One team from slab yard to final seam.</p>
+        <div class="ph-meta">
+          <span class="dot"></span><span>Slab yard at Philadelphia HQ</span>
+          <span class="dot"></span><span>2–3 week lead time</span>
+        </div>
+        <div style="margin-top:36px;display:flex;gap:12px;flex-wrap:wrap">
+          <a href="contact.html" class="btn btn-primary">Book a Slab Viewing<span class="arrow">→</span></a>
+          <a href="#compare" class="btn btn-ghost">Compare Materials<span class="arrow">→</span></a>
+        </div>
+      </div>
+      <div class="ph-img"><img src="images/c1.jpg" alt="Countertop"></div>
+    </div>
+  </div>
+</header>
+
+<section class="section" style="padding-top:96px">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><span class="eyebrow">Three surface categories</span><h2 style="margin-top:24px">Pick a material, <em>not a marketing line.</em></h2></div>
+      <p>We fabricate in all three. None is the "best" — they trade off differently on price, maintenance, veining, and heat tolerance. Here's the honest rundown.</p>
+    </div>
+    <div class="mat-grid">
+      <article class="mat">
+        <div class="mat-top"><span class="mat-tag">Engineered</span><img src="images/c1.jpg" alt="Quartz"></div>
+        <div class="mat-body">
+          <h3>Quartz</h3>
+          <p class="lede">Engineered slabs of crushed quartz bound in resin. Non-porous, zero maintenance, consistent veining slab-to-slab. Our most-spec'd kitchen surface.</p>
+          <div class="mat-stats">
+            <div class="s"><div class="k">Starts at</div><div class="v">$75 / sq ft installed</div></div>
+            <div class="s"><div class="k">Heat tolerance</div><div class="v">Moderate</div></div>
+            <div class="s"><div class="k">Maintenance</div><div class="v">Wipe &amp; go</div></div>
+            <div class="s"><div class="k">Brands</div><div class="v">Cambria · Caesarstone · Silestone</div></div>
+          </div>
+        </div>
+      </article>
+      <article class="mat">
+        <div class="mat-top"><span class="mat-tag">Natural stone</span><img src="images/c2.jpg" alt="Granite"></div>
+        <div class="mat-body">
+          <h3>Granite &amp; Quartzite</h3>
+          <p class="lede">Quarried natural stone. Every slab unique. More heat-tolerant than quartz; needs periodic sealing. Selected from full slabs at our yard by appointment.</p>
+          <div class="mat-stats">
+            <div class="s"><div class="k">Starts at</div><div class="v">$65 / sq ft installed</div></div>
+            <div class="s"><div class="k">Heat tolerance</div><div class="v">Excellent</div></div>
+            <div class="s"><div class="k">Maintenance</div><div class="v">Seal annually</div></div>
+            <div class="s"><div class="k">Selection</div><div class="v">300+ slabs on site</div></div>
+          </div>
+        </div>
+      </article>
+      <article class="mat">
+        <div class="mat-top"><span class="mat-tag">Laminate</span><img src="images/p3.jpg" alt="Laminate"></div>
+        <div class="mat-body">
+          <h3>Laminate &amp; Solid Surface</h3>
+          <p class="lede">Wilsonart and Formica HD laminate, plus Corian solid surface. Shortest lead times, widest price range, and surprisingly high-fidelity stone looks.</p>
+          <div class="mat-stats">
+            <div class="s"><div class="k">Starts at</div><div class="v">$35 / sq ft installed</div></div>
+            <div class="s"><div class="k">Heat tolerance</div><div class="v">Low</div></div>
+            <div class="s"><div class="k">Maintenance</div><div class="v">None</div></div>
+            <div class="s"><div class="k">Lead time</div><div class="v">1–2 weeks</div></div>
+          </div>
+        </div>
+      </article>
+    </div>
+    <div class="compare" id="compare">
+      <table>
+        <thead><tr><th>Criterion</th><th>Quartz</th><th>Granite / Quartzite</th><th>Laminate / Solid Surface</th></tr></thead>
+        <tbody>
+          <tr><td>Scratch resistance</td><td><span class="dots"><i class="d on"></i><i class="d on"></i><i class="d on"></i><i class="d on"></i><i class="d"></i></span></td><td><span class="dots"><i class="d on"></i><i class="d on"></i><i class="d on"></i><i class="d on"></i><i class="d on"></i></span></td><td><span class="dots"><i class="d on"></i><i class="d on"></i><i class="d"></i><i class="d"></i><i class="d"></i></span></td></tr>
+          <tr><td>Heat tolerance</td><td><span class="dots"><i class="d on"></i><i class="d on"></i><i class="d on"></i><i class="d"></i><i class="d"></i></span></td><td><span class="dots"><i class="d on"></i><i class="d on"></i><i class="d on"></i><i class="d on"></i><i class="d on"></i></span></td><td><span class="dots"><i class="d on"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i></span></td></tr>
+          <tr><td>Stain resistance</td><td><span class="dots"><i class="d on"></i><i class="d on"></i><i class="d on"></i><i class="d on"></i><i class="d on"></i></span></td><td><span class="dots"><i class="d on"></i><i class="d on"></i><i class="d on"></i><i class="d"></i><i class="d"></i></span></td><td><span class="dots"><i class="d on"></i><i class="d on"></i><i class="d on"></i><i class="d on"></i><i class="d"></i></span></td></tr>
+          <tr><td>Maintenance required</td><td>None</td><td>Reseal annually</td><td>None</td></tr>
+          <tr><td>Slab-to-slab consistency</td><td>High</td><td>Each unique</td><td>High</td></tr>
+          <tr><td>Typical lead time</td><td>2–3 weeks</td><td>2–3 weeks</td><td>1–2 weeks</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background:var(--cream-2)">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><span class="eyebrow">Fabrication process</span><h2 style="margin-top:24px">From slab <em>to installed edge.</em></h2></div>
+      <p>Every countertop we fabricate runs the same five-step process. Most jobs install 2–3 weeks after the template.</p>
+    </div>
+    <div class="steps">
+      <div class="step"><span class="n">STEP 01</span><h4>Slab selection</h4><p>Pick your slab on-site at our Philadelphia yard. Full slabs out, natural light, no photos-of-photos.</p></div>
+      <div class="step"><span class="n">STEP 02</span><h4>Digital template</h4><p>Laser-measured after cabinets are set. We capture every outlet, faucet, and wall flex to 1/16".</p></div>
+      <div class="step"><span class="n">STEP 03</span><h4>Shop fabrication</h4><p>CNC-cut, edge-profiled, polished, and sink-cutouts fitted. You can stop by and inspect before it ships.</p></div>
+      <div class="step"><span class="n">STEP 04</span><h4>Site install</h4><p>Our crew delivers, sets, and seams on the same day. Disconnect &amp; reconnect of plumbing coordinated.</p></div>
+      <div class="step"><span class="n">STEP 05</span><h4>Final seal</h4><p>Stone gets sealed before we leave. Care &amp; maintenance sheet goes in the drawer.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-strip">
+  <div class="wrap cta-strip-inner">
+    <div><h2>Come see the <em>slab yard.</em></h2><p>Better than any finish sample. Our Philadelphia yard holds 300+ full slabs of granite, quartzite, quartz, and marble — open for viewing by appointment.</p></div>
+    <div class="cta-strip-actions"><a href="contact.html" class="btn btn-gold">Book a Slab Viewing<span class="arrow">→</span></a></div>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+<script src="shared/site.js"></script>
+</body>
+</html>

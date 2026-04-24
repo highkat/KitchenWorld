@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Kitchen World Inc. — Philadelphia's Kitchen & Bath Experts Since 1987</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0F2A44;--navy-soft:#1B3A5B;--navy-ink:#0A1D30;
+  --cream:#FAF7F2;--cream-2:#F3EEE5;--line:#E6DFD2;
+  --gold:#B8894A;--gold-soft:#D4A968;
+  --slate:#4A5568;--slate-soft:#7C8695;--white:#FFFFFF;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:var(--cream);color:var(--navy-ink);font-family:"Inter",system-ui,sans-serif;-webkit-font-smoothing:antialiased;font-size:17px;line-height:1.55}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+h1,h2,h3,h4{font-family:"Instrument Sans",sans-serif;font-weight:500;letter-spacing:-0.02em;color:var(--navy-ink);line-height:1.08}
+.mono{font-family:"JetBrains Mono",monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--slate)}
+.wrap{max-width:1280px;margin:0 auto;padding:0 40px}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold)}
+.eyebrow::before{content:"";width:28px;height:1px;background:var(--gold)}
+
+/* NAV */
+.nav{position:sticky;top:0;z-index:50;background:rgba(250,247,242,.88);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:76px;gap:48px}
+.logo{display:flex;align-items:center;gap:12px}
+.logo-mark{width:36px;height:36px;border-radius:4px;background:var(--navy);display:grid;place-items:center;color:var(--cream);font-family:"Instrument Sans";font-size:18px;font-weight:600}
+.logo-text{display:flex;flex-direction:column;line-height:1}
+.logo-text b{font-family:"Instrument Sans";font-weight:600;font-size:17px;letter-spacing:-0.01em}
+.logo-text span{font-size:10px;font-family:"JetBrains Mono",monospace;letter-spacing:.15em;color:var(--slate);margin-top:4px}
+.nav-links{display:flex;gap:36px;font-size:14.5px;font-weight:450;margin:0 auto}
+.nav-links a{color:var(--navy);opacity:.85}
+.nav-links a:hover{opacity:1;color:var(--gold)}
+.nav-cta{display:flex;align-items:center;gap:22px}
+.nav-phone{font-family:"JetBrains Mono",monospace;font-size:13px;color:var(--navy);white-space:nowrap}
+
+/* BUTTONS */
+.btn{display:inline-flex;align-items:center;gap:10px;padding:16px 28px;border-radius:2px;font-size:14px;font-weight:500;letter-spacing:.02em;transition:all .2s ease;cursor:pointer;border:none;font-family:inherit}
+.btn-primary{background:var(--navy);color:var(--cream)}
+.btn-primary:hover{background:var(--navy-ink)}
+.btn-gold{background:var(--gold);color:var(--white)}
+.btn-gold:hover{background:#a47839}
+.btn-ghost{background:transparent;color:var(--navy);border:1px solid var(--navy)}
+.btn-ghost:hover{background:var(--navy);color:var(--cream)}
+.btn-link{font-size:13px;font-weight:500;color:var(--navy);border-bottom:1px solid var(--navy);padding-bottom:2px;letter-spacing:.02em}
+.btn-link:hover{color:var(--gold);border-color:var(--gold)}
+.arrow{display:inline-block;transition:transform .2s}
+.btn:hover .arrow{transform:translateX(3px)}
+
+/* HERO */
+.hero-wrap{background:var(--cream);padding-top:0}
+.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;padding:80px 0 0}
+.hero-eyebrow{margin-bottom:28px}
+.hero h1{font-size:clamp(42px,5.8vw,84px);font-weight:400;letter-spacing:-0.04em;line-height:1.02;color:var(--navy-ink)}
+.hero h1 em{font-style:italic;color:var(--gold);font-weight:400}
+.hero-sub{font-size:18px;color:var(--slate);line-height:1.6;margin-top:28px;max-width:520px}
+.hero-actions{display:flex;gap:14px;margin-top:36px;flex-wrap:wrap}
+.hero-meta{display:flex;gap:24px;margin-top:28px;flex-wrap:wrap}
+.hero-meta-item{display:flex;align-items:center;gap:8px;font-size:12.5px;color:var(--slate)}
+.hero-meta-dot{width:6px;height:6px;border-radius:50%;background:var(--gold);flex-shrink:0}
+
+.hero-right{position:relative}
+.hero-img-wrap{aspect-ratio:4/5;overflow:hidden;border-radius:2px;background:var(--cream-2)}
+.hero-img-wrap img{width:100%;height:100%;object-fit:cover}
+.hero-tag{position:absolute;bottom:28px;left:-28px;background:var(--navy);color:var(--cream);padding:18px 22px;max-width:240px}
+.hero-tag-label{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:6px}
+.hero-tag p{font-size:13px;color:rgba(250,247,242,.82);line-height:1.5}
+
+/* TRUST BAR */
+.trust-bar{border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-top:72px}
+.trust-grid{display:grid;grid-template-columns:repeat(4,1fr)}
+.trust-item{padding:36px 40px;border-right:1px solid var(--line);display:flex;flex-direction:column;gap:6px}
+.trust-item:last-child{border-right:none}
+.trust-num{font-family:"Instrument Sans";font-size:38px;font-weight:500;color:var(--navy);letter-spacing:-0.04em;line-height:1}
+.trust-label{font-size:13px;color:var(--slate);line-height:1.5}
+.trust-affs{display:flex;gap:16px;align-items:center;margin-top:4px;flex-wrap:wrap}
+.trust-affs img{height:32px;width:auto;object-fit:contain;opacity:.7;filter:grayscale(1)}
+.trust-affs img:hover{opacity:1;filter:none}
+
+/* SERVICES */
+.services-section{padding:120px 0}
+.services-head{margin-bottom:72px}
+.services-head h2{font-size:clamp(36px,4.2vw,58px);font-weight:400;letter-spacing:-0.03em}
+.services-head h2 em{font-style:italic;color:var(--gold)}
+.services-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line)}
+.svc-card{background:var(--cream);padding:44px 36px;display:flex;flex-direction:column;transition:background .2s}
+.svc-card:hover{background:var(--cream-2)}
+.svc-num{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.2em;color:var(--gold);margin-bottom:28px}
+.svc-icon{width:40px;height:40px;color:var(--navy);margin-bottom:20px}
+.svc-title{font-family:"Instrument Sans";font-size:20px;font-weight:500;margin-bottom:14px;color:var(--navy-ink)}
+.svc-desc{font-size:14px;color:var(--slate);line-height:1.65;flex:1}
+.svc-link{margin-top:28px;font-size:13px;font-weight:500;color:var(--navy);display:inline-flex;align-items:center;gap:6px;border-bottom:1px solid var(--navy);padding-bottom:2px;transition:all .2s}
+.svc-link:hover{color:var(--gold);border-color:var(--gold)}
+
+/* WHY US */
+.why-section{background:var(--navy);padding:100px 0}
+.why-head{color:var(--cream);font-size:clamp(36px,4vw,52px);font-weight:400;letter-spacing:-0.03em;margin-bottom:64px}
+.why-head em{font-style:italic;color:var(--gold-soft)}
+.why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:40px}
+.why-item{border-top:1px solid rgba(250,247,242,.15);padding-top:28px}
+.why-item-num{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.2em;color:var(--gold-soft);margin-bottom:16px}
+.why-item h4{font-family:"Instrument Sans";font-size:17px;font-weight:500;color:var(--cream);margin-bottom:10px}
+.why-item p{font-size:13.5px;color:rgba(250,247,242,.68);line-height:1.6}
+
+/* PROJECTS GRID */
+.projects-section{padding:120px 0}
+.projects-head{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:end;margin-bottom:56px}
+.projects-head h2{font-size:clamp(36px,4.2vw,58px);font-weight:400;letter-spacing:-0.03em}
+.projects-head h2 em{font-style:italic;color:var(--gold)}
+.projects-head p{color:var(--slate);font-size:16px;max-width:420px;line-height:1.6}
+.proj-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:10px}
+.proj-tile{position:relative;overflow:hidden;background:var(--cream-2)}
+.proj-tile img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+.proj-tile:hover img{transform:scale(1.04)}
+.proj-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,29,48,.82) 0%,transparent 55%);opacity:0;transition:opacity .3s}
+.proj-tile:hover .proj-overlay{opacity:1}
+.proj-label{position:absolute;bottom:20px;left:20px;color:var(--cream)}
+.proj-label b{font-family:"Instrument Sans";font-size:15px;font-weight:500;display:block}
+.proj-label span{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-soft)}
+.t1{grid-column:span 5;aspect-ratio:4/3}
+.t2{grid-column:span 4;aspect-ratio:4/3}
+.t3{grid-column:span 3;aspect-ratio:4/5}
+.t4{grid-column:span 3;aspect-ratio:4/5}
+.t5{grid-column:span 5;aspect-ratio:4/3}
+.t6{grid-column:span 4;aspect-ratio:4/3}
+.proj-footer{margin-top:40px;display:flex;justify-content:center;padding:32px 0;border-top:1px solid var(--line)}
+
+/* TESTIMONIALS */
+.testi-section{padding:120px 0;background:var(--cream-2)}
+.testi-head{margin-bottom:64px}
+.testi-head h2{font-size:clamp(36px,4.2vw,56px);font-weight:400;letter-spacing:-0.03em}
+.testi-head h2 em{font-style:italic;color:var(--gold)}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.testi-card{background:var(--cream);padding:40px;display:flex;flex-direction:column;gap:20px}
+.testi-stars{display:flex;gap:4px}
+.testi-star{color:var(--gold);font-size:16px}
+.testi-text{font-size:15.5px;color:var(--navy-ink);line-height:1.65;flex:1}
+.testi-attr{border-top:1px solid var(--line);padding-top:20px}
+.testi-attr b{font-family:"Instrument Sans";font-size:14.5px;font-weight:600;color:var(--navy);display:block}
+.testi-attr span{font-size:13px;color:var(--slate)}
+
+/* 3D SHOWROOM */
+.showroom-section{display:grid;grid-template-columns:1fr 1fr}
+.showroom-left{background:var(--navy);padding:100px 72px;display:flex;flex-direction:column;justify-content:center}
+.showroom-eyebrow{margin-bottom:24px}
+.showroom-left h2{font-size:clamp(36px,3.8vw,52px);font-weight:400;letter-spacing:-0.03em;color:var(--cream);line-height:1.1}
+.showroom-left h2 em{font-style:italic;color:var(--gold-soft)}
+.showroom-left p{color:rgba(250,247,242,.72);font-size:16px;line-height:1.65;margin-top:24px;max-width:420px}
+.showroom-left .btn{margin-top:40px;align-self:flex-start}
+.showroom-right{position:relative;min-height:520px;overflow:hidden}
+.showroom-right img{width:100%;height:100%;object-fit:cover}
+.play-btn{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:72px;height:72px;background:rgba(250,247,242,.92);border-radius:50%;display:grid;place-items:center;cursor:pointer;transition:transform .2s,background .2s}
+.play-btn:hover{background:var(--cream);transform:translate(-50%,-50%) scale(1.08)}
+.play-btn svg{margin-left:4px}
+
+/* FOOTER */
+.footer{background:var(--navy-ink);color:var(--cream);padding:96px 0 32px}
+.footer-top{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:72px;padding-bottom:72px;border-bottom:1px solid rgba(250,247,242,.12)}
+.footer .logo-mark{background:var(--gold)}
+.footer .logo-text b{color:var(--cream)}
+.footer .logo-text span{color:rgba(250,247,242,.5)}
+.footer-col h4{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-soft);font-weight:400;margin-bottom:20px}
+.footer-col p,.footer-col a{color:rgba(250,247,242,.78);font-size:14.5px;line-height:1.7}
+.footer-col a:hover{color:var(--gold-soft)}
+.footer-intro{max-width:340px;color:rgba(250,247,242,.7);font-size:14.5px;line-height:1.6;margin-top:20px}
+.phone-big{font-family:"Instrument Sans";font-size:22px;color:var(--cream);font-weight:500;letter-spacing:-0.01em;margin-top:18px;display:inline-block}
+.phone-big:hover{color:var(--gold-soft)}
+.loc{margin-bottom:18px}
+.loc b{color:var(--cream);font-weight:600;font-size:14.5px;display:block;margin-bottom:2px}
+.socials{display:flex;gap:10px;margin-top:20px}
+.social{width:36px;height:36px;border:1px solid rgba(250,247,242,.2);border-radius:50%;display:grid;place-items:center;color:rgba(250,247,242,.7);transition:all .2s}
+.social:hover{border-color:var(--gold-soft);color:var(--gold-soft)}
+.footer-bottom{padding-top:32px;display:flex;justify-content:space-between;font-size:12px;color:rgba(250,247,242,.5);font-family:"JetBrains Mono",monospace;letter-spacing:.08em;text-transform:uppercase}
+
+@media(max-width:960px){
+  .wrap{padding:0 24px}
+  .nav-links{display:none}
+  .hero-grid{grid-template-columns:1fr;gap:48px;padding:60px 0 0}
+  .hero-tag{left:0;bottom:-20px}
+  .trust-grid{grid-template-columns:1fr 1fr}
+  .services-grid{grid-template-columns:1fr 1fr}
+  .why-grid{grid-template-columns:1fr 1fr}
+  .projects-head{grid-template-columns:1fr}
+  .testi-grid{grid-template-columns:1fr}
+  .showroom-section{grid-template-columns:1fr}
+  .footer-top{grid-template-columns:1fr;gap:40px}
+  .proj-grid{grid-template-columns:1fr 1fr}
+  .t1,.t2,.t3,.t4,.t5,.t6{grid-column:span 1;aspect-ratio:4/3}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="wrap nav-inner">
+    <a href="index.html" class="logo">
+      <div class="logo-mark">K</div>
+      <div class="logo-text"><b>Kitchen World</b><span>EST. 1987</span></div>
+    </a>
+    <div class="nav-links">
+      <a href="kitchens.html">Kitchens</a>
+      <a href="bathrooms.html">Bathrooms</a>
+      <a href="countertops.html">Countertops</a>
+      <a href="gallery.html">Projects</a>
+      <a href="design.html">Design</a>
+      <a href="about.html">About</a>
+    </div>
+    <div class="nav-cta">
+      <a href="tel:+12157446447" class="nav-phone">215.744.6447</a>
+      <a href="contact.html" class="btn btn-primary" style="padding:12px 20px;font-size:13px">Schedule Consultation <span class="arrow">→</span></a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero-wrap">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div class="hero-left">
+        <div class="hero-eyebrow">
+          <span class="eyebrow">Philadelphia · Furlong · Bridgeport</span>
+        </div>
+        <h1 class="hero">Philadelphia's Kitchen &amp; Bath Experts <em>since 1987.</em></h1>
+        <p class="hero-sub">Three showrooms. Nearly four decades of craft. From cabinet selection to final installation — we handle every detail so you don't have to.</p>
+        <div class="hero-actions">
+          <a href="contact.html" class="btn btn-primary">Schedule Consultation <span class="arrow">→</span></a>
+          <a href="gallery.html" class="btn btn-ghost">View Our Gallery <span class="arrow">→</span></a>
+        </div>
+        <div class="hero-meta">
+          <div class="hero-meta-item"><div class="hero-meta-dot"></div><span>Free in-home measure &amp; site visits</span></div>
+          <div class="hero-meta-item"><div class="hero-meta-dot"></div><span>Wholesale-direct pricing</span></div>
+        </div>
+      </div>
+      <div class="hero-right">
+        <div class="hero-img-wrap">
+          <img src="images/hero.jpg" alt="Kitchen World showroom interior">
+        </div>
+        <div class="hero-tag">
+          <div class="hero-tag-label">On the floor</div>
+          <p>Walk full vignettes in three showrooms — see every door style, finish, and fixture in context before you commit.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- TRUST BAR -->
+    <div class="trust-bar">
+      <div class="trust-grid">
+        <div class="trust-item">
+          <div class="trust-num">39 yrs</div>
+          <div class="trust-label">Serving Philadelphia<br>since 1987</div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-num">3</div>
+          <div class="trust-label">Regional showrooms<br>in PA</div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-num">100+</div>
+          <div class="trust-label">Years combined<br>experience on staff</div>
+        </div>
+        <div class="trust-item">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:14px">Affiliated with</div>
+          <div class="trust-affs">
+            <img src="images/fei.png" alt="FEI Group">
+            <img src="images/kba.png" alt="Kitchen &amp; Bath Association">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section class="services-section">
+  <div class="wrap">
+    <div class="services-head">
+      <div class="eyebrow" style="margin-bottom:20px">What we do</div>
+      <h2>From concept to <em>installation.</em></h2>
+    </div>
+    <div class="services-grid">
+
+      <div class="svc-card">
+        <div class="svc-num">01</div>
+        <svg class="svc-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5">
+          <rect x="4" y="8" width="32" height="24" rx="2"/>
+          <path d="M4 16h32M14 16v16M4 24h10"/>
+        </svg>
+        <div class="svc-title">Kitchens</div>
+        <p class="svc-desc">Semi-custom and full-custom cabinetry from Wood-Mode, Waypoint, Shiloh, Fabuwood, and more — designed around how you actually cook.</p>
+        <a href="kitchens.html" class="svc-link">Learn More <span class="arrow">→</span></a>
+      </div>
+
+      <div class="svc-card">
+        <div class="svc-num">02</div>
+        <svg class="svc-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5">
+          <rect x="6" y="4" width="28" height="32" rx="2"/>
+          <path d="M12 14h16M12 20h10M18 32v-8h10v8"/>
+        </svg>
+        <div class="svc-title">Bathrooms</div>
+        <p class="svc-desc">Vanities, tile, fixtures, and the complete bath package — treated with the same rigor as a kitchen, from first measure through final polish.</p>
+        <a href="bathrooms.html" class="svc-link">Learn More <span class="arrow">→</span></a>
+      </div>
+
+      <div class="svc-card">
+        <div class="svc-num">03</div>
+        <svg class="svc-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5">
+          <rect x="4" y="12" width="32" height="6" rx="1"/>
+          <path d="M8 18v14M32 18v14M4 32h32"/>
+        </svg>
+        <div class="svc-title">Countertops</div>
+        <p class="svc-desc">Quartz, granite, quartzite, and laminate — templated, fabricated, and installed by our own crews. Come see the slab yard.</p>
+        <a href="countertops.html" class="svc-link">Learn More <span class="arrow">→</span></a>
+      </div>
+
+      <div class="svc-card">
+        <div class="svc-num">04</div>
+        <svg class="svc-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M8 32L20 8l12 24"/>
+          <path d="M12 24h16"/>
+          <circle cx="20" cy="8" r="2" fill="currentColor" stroke="none"/>
+        </svg>
+        <div class="svc-title">Design Services</div>
+        <p class="svc-desc">In-house designers producing 2D plans, elevations, and 3D walkthroughs — real drawings, not just pretty renders.</p>
+        <a href="design.html" class="svc-link">Learn More <span class="arrow">→</span></a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="why-section">
+  <div class="wrap">
+    <h2 class="why-head">Why homeowners choose <em>Kitchen World.</em></h2>
+    <div class="why-grid">
+      <div class="why-item">
+        <div class="why-item-num">01</div>
+        <h4>100+ Years Combined Experience</h4>
+        <p>Our design team has decades of collective expertise specifying cabinetry, stone, and fixtures for Philadelphia-area homes.</p>
+      </div>
+      <div class="why-item">
+        <div class="why-item-num">02</div>
+        <h4>Wholesale-Direct Pricing</h4>
+        <p>Direct relationships with major cabinet lines let us pass real savings to you — no retail markup, no middleman margin.</p>
+      </div>
+      <div class="why-item">
+        <div class="why-item-num">03</div>
+        <h4>Free Site Visits</h4>
+        <p>We come to you. Our team will measure your space, assess site conditions, and return with an accurate, itemized quote.</p>
+      </div>
+      <div class="why-item">
+        <div class="why-item-num">04</div>
+        <h4>Trusted Contractors</h4>
+        <p>A vetted network of installation contractors who know our product lines — no surprises on the job site, ever.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section class="projects-section">
+  <div class="wrap">
+    <div class="projects-head">
+      <div>
+        <div class="eyebrow" style="margin-bottom:18px">Recent work</div>
+        <h2>Projects from <em>the floor up.</em></h2>
+      </div>
+      <p>From compact city row houses to sprawling Bucks County estates — every project gets the same obsessive attention to detail.</p>
+    </div>
+    <div class="proj-grid">
+      <a href="gallery.html" class="proj-tile t1">
+        <img src="images/p1.jpg" alt="Kitchen renovation Philadelphia">
+        <div class="proj-overlay"></div>
+        <div class="proj-label"><b>Roxborough Kitchen</b><span>Philadelphia</span></div>
+      </a>
+      <a href="gallery.html" class="proj-tile t2">
+        <img src="images/p2.jpg" alt="Primary bath suite">
+        <div class="proj-overlay"></div>
+        <div class="proj-label"><b>Primary Bath</b><span>Furlong</span></div>
+      </a>
+      <a href="gallery.html" class="proj-tile t3">
+        <img src="images/p3.jpg" alt="Countertop installation">
+        <div class="proj-overlay"></div>
+        <div class="proj-label"><b>Quartz Tops</b><span>Bridgeport</span></div>
+      </a>
+      <a href="gallery.html" class="proj-tile t4">
+        <img src="images/p4.jpg" alt="Custom bath">
+        <div class="proj-overlay"></div>
+        <div class="proj-label"><b>Guest Bath</b><span>Chestnut Hill</span></div>
+      </a>
+      <a href="gallery.html" class="proj-tile t5">
+        <img src="images/p5.jpg" alt="Kitchen design">
+        <div class="proj-overlay"></div>
+        <div class="proj-label"><b>Manayunk Kitchen</b><span>Philadelphia</span></div>
+      </a>
+      <a href="gallery.html" class="proj-tile t6">
+        <img src="images/p6.jpg" alt="Bathroom renovation">
+        <div class="proj-overlay"></div>
+        <div class="proj-label"><b>Hall Bath Reno</b><span>Doylestown</span></div>
+      </a>
+    </div>
+    <div class="proj-footer">
+      <a href="gallery.html" class="btn btn-ghost">See All Projects <span class="arrow">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testi-section">
+  <div class="wrap">
+    <div class="testi-head">
+      <div class="eyebrow" style="margin-bottom:18px">Client stories</div>
+      <h2>What our clients <em>say.</em></h2>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div class="testi-stars">
+          <span class="testi-star">★</span><span class="testi-star">★</span><span class="testi-star">★</span><span class="testi-star">★</span><span class="testi-star">★</span>
+        </div>
+        <p class="testi-text">"We'd been to four other showrooms before walking into Kitchen World Philadelphia. Within ten minutes we knew we were done shopping. The designers actually listened — they didn't try to upsell us on things we didn't need. The kitchen came in on budget, ahead of schedule, and it's the best room in the house now."</p>
+        <div class="testi-attr">
+          <b>Margaret &amp; David Chen</b>
+          <span>Roxborough, Philadelphia · Kitchen &amp; Primary Bath</span>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">
+          <span class="testi-star">★</span><span class="testi-star">★</span><span class="testi-star">★</span><span class="testi-star">★</span><span class="testi-star">★</span>
+        </div>
+        <p class="testi-text">"I'm a contractor and I've been sending clients to Kitchen World for over fifteen years. The product quality is consistently excellent, the pricing is fair, and when there's ever an issue — which is rare — they fix it without argument. That's what keeps me coming back job after job."</p>
+        <div class="testi-attr">
+          <b>Frank DiMarco</b>
+          <span>DiMarco Home Improvements · Bucks County</span>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">
+          <span class="testi-star">★</span><span class="testi-star">★</span><span class="testi-star">★</span><span class="testi-star">★</span><span class="testi-star">★</span>
+        </div>
+        <p class="testi-text">"The Matterport virtual tour let me explore the Furlong showroom from my phone before making the drive. When I got there, the space exceeded every expectation. The designers helped me find a countertop I never would have chosen on my own — a leathered quartzite that's absolutely stunning."</p>
+        <div class="testi-attr">
+          <b>Priya Raman</b>
+          <span>New Hope, PA · Kitchen &amp; Countertops</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3D SHOWROOM -->
+<section class="showroom-section">
+  <div class="showroom-left">
+    <div class="eyebrow showroom-eyebrow" style="color:var(--gold-soft)">Virtual tour</div>
+    <h2>Walk our showrooms <em>from anywhere.</em></h2>
+    <p>Every Kitchen World location is captured in high-resolution Matterport 3D. Explore full kitchen and bath vignettes before you ever make the drive — then come in to touch the finishes in person.</p>
+    <a href="contact.html" class="btn btn-gold">Book a Showroom Visit <span class="arrow">→</span></a>
+  </div>
+  <div class="showroom-right">
+    <img src="images/showroom.jpg" alt="Kitchen World showroom 3D tour">
+    <div class="play-btn" role="button" aria-label="Watch virtual tour">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="var(--navy)"><path d="M8 5v14l11-7z"/></svg>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div>
+        <a href="index.html" class="logo">
+          <div class="logo-mark">K</div>
+          <div class="logo-text"><b>Kitchen World</b><span>EST. 1987</span></div>
+        </a>
+        <p class="footer-intro">Three Philadelphia-area showrooms specifying cabinetry, vanities, and countertops for homeowners and contractors since 1987.</p>
+        <a href="tel:+12157446447" class="phone-big">215.744.6447</a>
+        <div class="socials">
+          <a href="#" class="social" aria-label="Instagram"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="4"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor"/></svg></a>
+          <a href="#" class="social" aria-label="Facebook"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 8h3V4h-3a4 4 0 0 0-4 4v2H7v4h3v8h4v-8h3l1-4h-4V8z"/></svg></a>
+          <a href="#" class="social" aria-label="Houzz"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M7 3v18M17 3v18M7 12h10"/></svg></a>
+          <a href="#" class="social" aria-label="Pinterest"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M10 22l2-8m-1-4a2 2 0 1 1 4 0c0 3-2 6-4 6"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Showrooms</h4>
+        <div class="loc"><b>Philadelphia</b><p>2763 Orthodox St.<br>Philadelphia, PA 19137</p></div>
+        <div class="loc"><b>Furlong</b><p>3503 York Rd.<br>Furlong, PA 18925</p></div>
+        <div class="loc"><b>Bridgeport</b><p>65 East 4th St.<br>Bridgeport, PA 19405</p></div>
+      </div>
+      <div class="footer-col">
+        <h4>Hours</h4>
+        <p>Mon – Fri &nbsp; 9:00 – 5:00<br>Saturday &nbsp; Appointments only<br>Sunday &nbsp; Closed</p>
+        <h4 style="margin-top:36px">Site</h4>
+        <p><a href="kitchens.html">Kitchens</a><br><a href="bathrooms.html">Bathrooms</a><br><a href="countertops.html">Countertops</a><br><a href="gallery.html">Gallery</a><br><a href="design.html">Design Services</a><br><a href="about.html">About</a><br><a href="contact.html">Contact</a></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Kitchen World Inc.</span>
+      <span>Philadelphia · Furlong · Bridgeport</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
